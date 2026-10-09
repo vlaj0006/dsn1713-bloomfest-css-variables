@@ -14,20 +14,63 @@
 
 :root {
 
-  /* TASK 1: Your custom variables
-     Type them here from the Design Tokens table in the Brightspace:
+/* TASK 1: Your custom variables
+   Type them here from the Design Tokens table in the Brightspace:
      colours first, then the -rgb versions, then fonts and sizes. */
 
+   --bf-black: #0a0a0a;
+
+   --bf-charcoal: #111111;
+
+   --bf-white: #ffffff;
+
+   --bf-pink: #ff3ea5;
+   --bf-pink-rgb: 255, 62, 165;
+
+   --bf-pink-dark: #e6288f;
+
+   --bf-lime: #aaff00;
+   --bf-lime-rgb: 170, 255, 0;
+
+   --bf-sky: #38d9f5;
+   --bf-sky-rgb: 56, 217, 245;
+
+   --bf-orange: #ff7c2a;
+
+   --bf-orange-dark: #e8691a;
+
+   --bf-purple: #7c3aed;
+
+   --bf-font-display: 'Bebas Neue', Impact, sans-serif;
+   --bf-font-body: 'Plus Jakarta Sans', sans-serif;
+   --bf-fs-hero: clamp(4rem, 10vw, 8rem);
+   --bf-space-section: 5rem;
+   --bf-radius: 4px;
 
 
-  /* TASK 2: Bootstrap overrides
-     Find Bootstrap's variables for the page background, text
-     colour, body font, corner radius, primary colour, info
-     colour and link colour. Point each one at your variables.
+
+
+
+/* TASK 2: Bootstrap overrides
+   Find Bootstrap's variables for the page background, text
+   colour, body font, corner radius, primary colour, info
+   colour and link colour. Point each one at your variables.
      Remember: some colours also need their -rgb twin. */
 
+   --bs-body-bg: var(--bf-black);
+   --bs-body-color: var(--bf-white);
 
+   --bs-body-font-family:  var(--bf-font-body);
+   --bs-border-radius: var(--bf-radius);
 
+   --bs-primary: var(--bf-pink);
+   --bs-primary-rgb: var(--bf-pink-rgb);
+
+   --bs-info: var(--bf-sky);
+   --bs-info-rgb: var(--bf-sky-rgb);
+
+   --bs-link-color: var(--bf-lime);
+   --bs-link-color-rgb: var(--bf-lime-rgb);
 }
 
 
@@ -41,16 +84,16 @@ h1, h2, h3,
 .footer-logo,
 .form-heading,
 .blockquote {
-   font-family: ________________;
+   font-family: var(--bf-font-display);
 }
 
 .hero-title {
-   font-size: ________________;
+   font-size:var(--bf-fs-hero);
 }
 
 .section {
-   padding-top: ________________;
-   padding-bottom: ________________;
+   padding-top: var(--bf-space-section);
+   padding-bottom: var(--bf-space-section);
 }
 
 
@@ -59,15 +102,15 @@ h1, h2, h3,
 
 .hero-dates,
 .section-label {
-   color: ________________;
+   color: var(--bf-lime);
 }
 
 .festival-quote::before {
-   color: ________________;
+   color: var(--bf-pink);
 }
 
 .info-text p:first-of-type::first-letter {
-   color: ________________;
+   color: var(--bf-orange);
 }
 
 
@@ -76,15 +119,15 @@ h1, h2, h3,
    and quote section uses purple. */
 
 .site-header {
-
+   background-color: var(--bf-black);
 }
 
 .schedule-section {
-
+   background-color: var(--bf-charcoal);
 }
 
 .quote-section {
-
+   background-color: var(--bf-purple);
 }
 
 
@@ -94,7 +137,8 @@ h1, h2, h3,
    overriding the correct --bs- variables. */
 
 .navbar {
-
+   --bs-navbar-hover-color: var(--bf-white);
+   --bs-navbar-active-color: var(--bf-lime);
 }
 
 
@@ -104,7 +148,12 @@ h1, h2, h3,
    --bs- variables for this button. */
 
 .btn-primary {
-
+   --bs-btn-bg: var(--bf-pink); 
+   --bs-btn-border-color: var(--bf-pink); 
+   --bs-btn-hover-bg: var(--bf-pink-dark);
+   --bs-btn-hover-border-color: var(--bf-pink-dark);
+   --bs-btn-active-bg: var(--bf-pink-dark);
+   --bs-btn-active-border-color: var(--bf-pink-dark);
 }
 
 
@@ -112,7 +161,15 @@ h1, h2, h3,
    Same variables as Task 7, plus the text colour variables. */
 
 .btn-warning {
-
+   --bs-btn-bg: var(--bf-orange);
+   --bs-btn-border-color: var(--bf-orange);
+   --bs-btn-hover-bg: var(--bf-orange-dark);
+   --bs-btn-hover-border-color: var(--bf-orange-dark);
+   --bs-btn-active-bg: var(--bf-orange-dark);
+   --bs-btn-active-border-color: var(--bf-orange-dark);
+   --bs-btn-color: var(--bf-white);
+   --bs-btn-hover-color: var(--bf-white);
+   --bs-btn-active-color: var(--bf-white);
 }
 
 
@@ -122,18 +179,15 @@ h1, h2, h3,
    variable as the property and your --bf variable as the value. */
 
 .artist-card {
-   /* Uses black variable */
-
+   --bs-card-bg: var(--bf-black);
 }
 
 .artist-card:hover {
-   /* Uses charcoal variable */
-
+   --bs-card-bg: var(--bf-charcoal);
 }
 
 .artist-card:has(.headliner-badge) {
-   /* Uses pink variable */
-
+   --bs-card-bg: var(--bf-pink);
 }
 
 
@@ -143,5 +197,6 @@ h1, h2, h3,
    set them here using your lime variables. */
 
 .form-control:focus {
-
+   border-color: var(--bf-lime);
+   box-shadow: 0 0 0 0.25rem rgba(var(--bf-lime-rgb), 0.25);
 }
